@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
+
+<script type="text/javascript">
+	function resettext(id){
+           //恢復文字
+           if(id.value == "")
+           {
+           	id.value = id.defaultValue;
+           	id.className ="t1";   
+           }
+       }
+       function cleartext (id){ 
+          //清除文字
+          id.value ="";
+          d.className ="";   
+      }
+  </script>
+
 <body>
+
+
+	<body background="http://img.ivsky.com/img/tupian/pre/201012/25/suse_zhiwen-013.jpg">
 
 	<form action="action_page.php">
 
 		<fieldset>
-		<legend>Personal information ! </legend>
+		<legend><strong><span style="color:blue">Personal information !</span></strong></legend>
+
+		<br>
 
 		1.Your name:<br>
-		<input type="text" name="name" value="Handsome Boy">
+		<input type="text" style="color:#AA9FAA" name="name" id="name" class="t1" value="Handsome Boy !!!" onfocus="cleartext(this)" onblur="resettext(this)"/>
 		<br><br>
 		
 		2.What is your gender?<br>
@@ -61,13 +83,13 @@
 		<br><br>
 
 		7.Your phone<br>
-		<input type="tel" name="tel"><br><br>
+		<input type="tel" name="tel" style="color:#AA9FAA" id="tel" class="t1" value="0987654321" onfocus="cleartext(this)" onblur="resettext(this)"/><br><br>
 		
 		8.Email address<br>
 		<input type="email" name="email"><br><br>
 		
 		9.Personal website<br>
-		<input type="url" name="url"><br><br>
+		<input type="url" name="url" value="http://"><br><br>
 
 
 
