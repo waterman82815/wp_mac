@@ -1,0 +1,32 @@
+body{
+	font-family: '文泉驛微米黑', 'LiHei Pro', '微軟正黑體', sans-serif;
+	background: url(http://g0003427.myweb.hinet.net/g0003423/www/a4-html/index/3/314.jpg);
+}
+
+p{
+	margin: 30px 0;
+}
+
+.content{
+	width: 80%;
+	margin: 0 auto;
+	padding: 50px;
+}
+
+.title{
+	font-weight: 700;
+	font-size: 20px;
+	color: blue;
+}
+
+#picture{
+	width: 80%;
+	margin: 0 auto;
+	padding: 50px;	
+}
+
+#picture img{
+	height: 300px;
+	float: left;
+	margin: 0 50px;
+}
