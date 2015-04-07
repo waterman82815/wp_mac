@@ -1,11 +1,10 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-
+				
 	
-	<title>iPhone, how to play video in-line and with autostart</title>	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<meta name="keywords" content="In-line, video, iphone" />
-	<meta name="description" content="Ever needed to play video in-line on an iPhone on your web page ? Use JavaScript video decoder to easily accomplish this and get full control including autostart without need for an app." />	<link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
+							<title>iPhone, how to play video in-line and with autostart</title>	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="keywords" content="In-line, video, iphone" />
+<meta name="description" content="Ever needed to play video in-line on an iPhone on your web page ? Use JavaScript video decoder to easily accomplish this and get full control including autostart without need for an app." />	<link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
 <link href="main-10.css" media="screen" rel="stylesheet" type="text/css" />	<!--[if lt IE 9]> <style type="text/css" media="screen">
  .cf { zoom: 1; }
 </style><![endif]-->
@@ -24,25 +23,26 @@
     var HTTP_ROOT = '';
     var ROOT_IMAGES = '';
     var ROOT_JS = '';
-    var ROOT_CSS = '';
-    var lang = 'en';
+	var ROOT_CSS = '';
+	var lang = 'en';
         //]]>
-        </script>
-        <!--[if lt IE 7]> <script type="text/javascript" src="/js/iepngfix_tilebg.js"></script><![endif]-->	 
+</script>
+<!--[if lt IE 7]> <script type="text/javascript" src="/js/iepngfix_tilebg.js"></script><![endif]-->	 
+		 
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+</head>
 
-        <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    </head>
-    <body>
-    	<div id="main" class="r p">
-    		<div id="content" class="r cf">
-    			<div class="pl_std" id="iph">
-    				<video data-url="http://s.easy-bits.com/videos/iphone-inline-video-autostart.mp4" width=640 height=360 controls poster="http://s.easy-bits.com/images/videos/iphone-inline-video-autostart.png" id="easy-bits-video">
-    					<source src="http://s.easy-bits.com/videos/iphone-inline-video-autostart.mp4" type="video/mp4" />
-    				</video>
-    			</div>
 
+<body>
+
+<div class="pl_std" id="iph">
+	<video data-url="http://s.easy-bits.com/videos/iphone-inline-video-autostart.mp4" width=640 height=360 controls poster="http://s.easy-bits.com/images/videos/iphone-inline-video-autostart.png" id="easy-bits-video">
+		<source src="http://s.easy-bits.com/videos/iphone-inline-video-autostart.mp4" type="video/mp4" />
+	</video>
+</div>
 
 </body>
+
 <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="head.load.min.js"></script>
 <script type="text/javascript" src="video-flash.js"></script>
@@ -53,7 +53,7 @@ $(document).ready(function(){
 			$('#iph').before('<h2 style="color:red;font-size:20px;text-align:center;">To see it in real action you need to view this page on an mobile device (iPhone, iPad, Android)!</h2>');
 		    //]]>
 </script>
-<script type="text/javascript" src="/js/global-5.js"></script>
+<script type="text/javascript" src="global-5.js"></script>
 <script type="text/javascript">
     //<![CDATA[
 	$(document).ready(function(){
@@ -69,41 +69,4 @@ $(document).ready(function(){
 		}
 	});
     //]]>
-</script>
-<script type="text/javascript">
-    //<![CDATA[
-
-$(document).ready(function(){
-	$('a[title="Login"]').click(function(e){
-		e.preventDefault();
-		e.stopImmediatePropagation();
-		showLF();
-		return false;
-	});
-});
-function showLF(){
-	if($('#lFW').length > 0){
-		showLFF();
-	}else{
-		createLF();
-	}
-}
-function createLF(){
-	head.load(ROOT_CSS+'/css/validationEngine.jquery.css');
-	$.ajax({
-		url: HTTP_ROOT+'/ajax-get-login',
-		type: "POST",
-		dataType : 'html',
-		data: ({returnurl: "%2Fiphone-inline-video-autostart%3Fautoplay%3D1"}),
-		success: function (r){
-			$('body').append(r);
-			head.load(ROOT_JS+'/js/formvalid/jquery.form.validation.js', ROOT_JS+'/js/jquery.form.js', HTTP_ROOT+'/ajax-loginjs', function() {
-				showLF();
-			});	
-		}
-	});
-}
-    //]]>
-
-
 </script></html>
