@@ -1,59 +1,96 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-
+				
 	
-	<title>Videojs player for iPhone</title>	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<meta name="keywords" content="Videojs, iPhone, inline" />
-	<meta name="description" content="Videojs player adopted for playing video inline with custom controls on iPhone, minimum customisation required." />	<link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
-	<link href="video-js.css" media="screen" rel="stylesheet" type="text/css" />
+							<title>Videojs player for iPhone</title>	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="keywords" content="Videojs, iPhone, inline" />
+<meta name="description" content="Videojs player adopted for playing video inline with custom controls on iPhone, minimum customisation required." />	<link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
+<link href="video-js.css" media="screen" rel="stylesheet" type="text/css" />
 <link href="main-10.css" media="screen" rel="stylesheet" type="text/css" />	<!--[if lt IE 9]> <style type="text/css" media="screen">
  .cf { zoom: 1; }
- </style><![endif]-->	<script type="text/javascript">
+</style><![endif]-->	<script type="text/javascript">
     //<![CDATA[
     var HTTP_ROOT = '';
     var ROOT_IMAGES = '';
     var ROOT_JS = '';
-    var ROOT_CSS = '';
-    var lang = 'en';
+	var ROOT_CSS = '';
+	var lang = 'en';
         //]]>
-        </script>
-        <!--[if lt IE 7]> <script type="text/javascript" src="/js/iepngfix_tilebg.js"></script><![endif]-->
-        <script type="text/javascript" src="video.dev.js"></script>	 
-
-        <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    </head>
-
-    <body>
-    		<div class="pl_std" id="pl_std_player">
-    			<video data-url="http://www.ishowlife.com/videos/beauty.mp4" width=640 height=360 controls poster="http://s.easy-bits.com/images/videos/iphone-inline-video-autostart.png" id="easy-bits-video" class="video-js vjs-default-skin">
-    				<source src="http://www.ishowlife.com/videos/beauty.mp4" type="video/mp4" />
-    			</video>
-    		</div>
-    		</body>
-    	<script type="text/javascript" src="head.load.min.js"></script>
-    	<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
-    	<script type="text/javascript">
+</script>
+<!--[if lt IE 7]> <script type="text/javascript" src="/js/iepngfix_tilebg.js"></script><![endif]-->
+<script type="text/javascript" src="video.dev.js"></script>	 
+		 
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+	<div id="main" class="r p">
+		<div id="content" class="r cf">
+			<h1>Videojs player for iPhone (inline playback with custom controls)</h1>
+<p>We adopted the famous <a href="http://www.videojs.com/" target="_blank">Videojs</a> to play jsv videos, the only thing we had to change was one class rule in the css file:</p>
+<code>
+	<pre>
+	.video-js .vjs-tech {
+	  position: absolute!important;
+	  top: 0;
+	  left: 0;
+	  width: 100%!important;
+	  height: 100%!important;
+	}
+	</pre>
+</code>	
+<p>And you can play videos inline with custom controls using the interface provided by Videojs player (please note that Videojs player is not properly tested to be used on iPhone):</p>
+<div class="pl_std" id="pl_std_player">
+	<video data-url="http://www.ishowlife.com/videos/beauty.mp4" width=640 height=360 controls poster="http://s.easy-bits.com/images/videos/iphone-inline-video-autostart.png" id="easy-bits-video" class="video-js vjs-default-skin">
+		<source src="http://www.ishowlife.com/videos/beauty.mp4" type="video/mp4" />
+	</video>
+</div>
+<p>Read more about <a href="/iphone-inline-video-autostart">playing videos inline with autorstart on iPhone.</a></p>
+		</div>	
+	</div>
+	<div id="footer" class="p">
+	<ul class="cf">
+		<li><a href="/privacy-policy" title="Privacy Policy" rel="nofollow" >Privacy Policy</a></li>
+		<li><a href="/terms-and-conditions" title="Terms and conditions" rel="nofollow" >Terms and conditions</a></li>
+	</ul>
+	<img id="cc" src="/images/layout/cc-30.jpg" />
+	<p>&copy; 2013 Easy Bits Limited</p>
+</div>
+	<div id="fade"></div>
+	<div id="background">
+		<div id="working">
+			<img id="loader" alt="loading.." src="/images/ajax-loader.gif"/>
+			<p>Please wait...</p>
+		</div>	
+	</div>
+			<div id="nvw">
+	<ul class="nv cf">
+		<li><a href="/" title="Products and services for online video publishers"><img id="mlogo" src="/images/layout/mlogo.png" alt="Logo" />Home</a></li>
+		<li><a  href="/live-webcams/all" title="List of Webcams">Webcams</a></li><li><a  href="/products" title="Products">Products</a></li><li><a  href="/services" title="Web development services for VOD/live streaming companies">Services</a></li><li><a  href="/about" title="About Easy Bits">About</a></li><li><a  href="/blog" title="Online video technology blog">Blog</a></li><li><a  rel="nofollow" href="/contact" title="Contact Easy-Bits.com">Contact</a></li><li><a  rel="nofollow" href="/account-ssl" title="Your account">Account</a></li><li><a  rel="nofollow" href="/logout" title="Logout">Logout</a></li>	</ul>
+</div></body>
+<script type="text/javascript" src="head.load.min.js"></script>
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
     //<![CDATA[
-    videojs(document.getElementById('easy-bits-video'), {customControlsOnMobile:true}, function(){
-    });
-    $('#pl_std_player').before('<h2 style="color:red;font-size:20px;text-align:center;">To see it in real action you need to view this page on an mobile device (iPhone, iPad, Android)!</h2>');
+			videojs(document.getElementById('easy-bits-video'), {customControlsOnMobile:true}, function(){
+			});
+			$('#pl_std_player').before('<h2 style="color:red;font-size:20px;text-align:center;">To see it in real action you need to view this page on an mobile device (iPhone, iPad, Android)!</h2>');
 		    //]]>
-		    </script>
-		 <script type="text/javascript" src="global-5.js"></script>
-		 <script type="text/javascript">
+</script>
+<script type="text/javascript" src="global-5.js"></script>
+<script type="text/javascript">
     //<![CDATA[
-    $(document).ready(function(){
-    	var u = window.location.href.toString().split(window.location.host)[1];
-    	if(u == '' || u == '/'){
-    		$('.nv li a:first-child').addClass('active');
-    	}else{
-    		$('.nv li a').each(function(){
-    			if(document.URL.indexOf($(this).attr('href')) != -1 && $(this).attr('href') != '/'){
-    				$(this).addClass('active');
-    			}
-    		});
-    	}
-    });
+	$(document).ready(function(){
+		var u = window.location.href.toString().split(window.location.host)[1];
+		if(u == '' || u == '/'){
+			$('.nv li a:first-child').addClass('active');
+		}else{
+			$('.nv li a').each(function(){
+				if(document.URL.indexOf($(this).attr('href')) != -1 && $(this).attr('href') != '/'){
+					$(this).addClass('active');
+				}
+			});
+		}
+	});
     //]]>
 </script></html>
