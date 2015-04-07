@@ -41,4 +41,69 @@
     				</video>
     			</div>
 
+
+</body>
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="head.load.min.js"></script>
+<script type="text/javascript" src="video-flash.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+$(document).ready(function(){
+	});
+			$('#iph').before('<h2 style="color:red;font-size:20px;text-align:center;">To see it in real action you need to view this page on an mobile device (iPhone, iPad, Android)!</h2>');
+		    //]]>
+</script>
+<script type="text/javascript" src="/js/global-5.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+	$(document).ready(function(){
+		var u = window.location.href.toString().split(window.location.host)[1];
+		if(u == '' || u == '/'){
+			$('.nv li a:first-child').addClass('active');
+		}else{
+			$('.nv li a').each(function(){
+				if(document.URL.indexOf($(this).attr('href')) != -1 && $(this).attr('href') != '/'){
+					$(this).addClass('active');
+				}
+			});
+		}
+	});
+    //]]>
+</script>
+<script type="text/javascript">
+    //<![CDATA[
+
+$(document).ready(function(){
+	$('a[title="Login"]').click(function(e){
+		e.preventDefault();
+		e.stopImmediatePropagation();
+		showLF();
+		return false;
+	});
+});
+function showLF(){
+	if($('#lFW').length > 0){
+		showLFF();
+	}else{
+		createLF();
+	}
+}
+function createLF(){
+	head.load(ROOT_CSS+'/css/validationEngine.jquery.css');
+	$.ajax({
+		url: HTTP_ROOT+'/ajax-get-login',
+		type: "POST",
+		dataType : 'html',
+		data: ({returnurl: "%2Fiphone-inline-video-autostart%3Fautoplay%3D1"}),
+		success: function (r){
+			$('body').append(r);
+			head.load(ROOT_JS+'/js/formvalid/jquery.form.validation.js', ROOT_JS+'/js/jquery.form.js', HTTP_ROOT+'/ajax-loginjs', function() {
+				showLF();
+			});	
+		}
+	});
+}
+    //]]>
+
+
 </script></html>
