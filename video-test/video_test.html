@@ -10,12 +10,7 @@
   <link href="http://vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
 <script src="http://vjs.zencdn.net/4.12/video.js"></script>
 
-<style type="text/css">
-  .vjs-default-skin { color: #ca2e2e; }
-  .vjs-default-skin .vjs-play-progress,
-  .vjs-default-skin .vjs-volume-level { background-color: #1e85bd }
-  .vjs-default-skin .vjs-control-bar { font-size: 161% }
-</style>
+
 
     </head>
 
@@ -38,6 +33,23 @@
 
 
 <br>
+
+
+<div id="video" class="ad-view">
+  <div class="video-frame">
+ 
+    <!-- A simple video element. We want to show the default controls and
+         want the video to begin playback inline (rather than fullscreen).
+         We also attach an ad-outlet so that we can easily reference this
+         element from the View Controller code -->
+    <video src="test.mp4" controls webkit-playsinline ad-outlet="video"></video>
+ 
+    <p>
+      The launch experience.
+    </p>
+ 
+  </div>
+</div>
 
 
   
