@@ -823,15 +823,13 @@ control positioning and full window mode. **
 }
 /* Playback technology elements expand to the width/height of the containing div
     <video> or <object> */
-
-
 .video-js .vjs-tech {
-    position: absolute!important;
+  position: absolute!important;
     top: 0;
     left: 0;
     width: 100%!important;
     height: 100%!important;
-  }
+}
 /* Fix for Firefox 9 fullscreen (only if it is enabled). Not needed when
    checking fullScreenEnabled. */
 .video-js:-moz-full-screen {
