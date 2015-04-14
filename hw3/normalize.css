@@ -125,7 +125,7 @@ a:active {
  */
 
 h1 {
-    margin: 1em 0;
+    margin: 0.3em 0;
 }
 
 h2 {
@@ -135,6 +135,7 @@ h2 {
 h3 {
     margin: 1em 0 0 0;
 }
+
 
 h4 {
     margin: 1.33em 0;
