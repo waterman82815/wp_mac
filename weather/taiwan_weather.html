@@ -4,23 +4,87 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Taiwan ßWeather</title>
+  <title>Taiwan Weather Forecast</title>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link href="mycss.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+
+
+<select id="cities"></select>
+ 
+  <script type="text/javascript">
+    var apiServer = 'https://query.yahooapis.com/v1/public/yql';
+    var cities = [ 
+      '臺北市',
+      '新北市',
+      '台中市',
+      '臺南市',
+      '高雄市',
+      '基隆市',
+      '桃園市',
+      '新竹市',
+      '新竹縣',
+      '苗栗縣',
+      '彰化縣',
+      '南投縣',
+      '雲林縣',
+      '嘉義市',
+      '嘉義縣',
+      '屏東縣',
+      '宜蘭縣',
+      '花蓮縣',
+      '台東縣',
+      '澎湖縣',
+      '金門縣',
+      '連江縣',
+    ];
+ 
+    var citiesContainer = $('#cities');
+ 
+    // render 'select' tag
+    for (var i in cities) {
+      var city = cities[i];
+      citiesContainer.append('<option value="' + i + '">' + city + '</option>');
+    }
+ 
+    // setup onchange listener
+    citiesContainer.change(function(){
+      var index = $(this).val();
+      var cityName = cities[index];
+      
+      var queryString = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + cityName + '")';
+      $.ajax({
+        url: apiServer,
+        data: {
+          format: 'json',
+          q: queryString,
+        },
+        success: function(data) {
+          console.log(data.query.results);
+        }
+      });
+    });
+  </script>
+
+
+
+
+
+  
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-6">
       <!-- Large button group -->
       <div class="btn-group">
         <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-          台北市 <span class="caret"></span>
+          請選擇城市 <span class="caret"></span>
         </button>
         <ul id="dropdown" class="dropdown-menu" role="menu">  
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">臺北市</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">新北市</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">台中市</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">新北市</a></li> 
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">台中市</a></li> 
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">臺南市</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">高雄市</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">基隆市</a></li>
@@ -33,12 +97,12 @@
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">雲林縣</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">嘉義市</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">嘉義縣</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">屏東縣</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">屏東縣</a></li> 
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">宜蘭縣</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">花蓮縣</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">台東縣</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">澎湖縣</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">金門縣</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">金門縣</a></li> 
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">連江縣</a></li>
         </ul>
       </div>
@@ -82,8 +146,6 @@
           </div>
     </div>
   </div>
-
-
   
 </div>
 
