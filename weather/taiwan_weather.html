@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taiwan Weather Forecast</title>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="mycss.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<select id="cities"></select>
+ 
+  <script type="text/javascript">
+    var apiServer = 'https://query.yahooapis.com/v1/public/yql';
+    var cities = [ 
+      '臺北市',
+      '新北市',
+      '台中市',
+      '臺南市',
+      '高雄市',
+      '基隆市',
+      '桃園市',
+      '新竹市',
+      '新竹縣',
+      '苗栗縣',
+      '彰化縣',
+      '南投縣',
+      '雲林縣',
+      '嘉義市',
+      '嘉義縣',
+      '屏東縣',
+      '宜蘭縣',
+      '花蓮縣',
+      '台東縣',
+      '澎湖縣',
+      '金門縣',
+      '連江縣',
+    ];
+ 
+    var citiesContainer = $('#cities');
+ 
+    // render 'select' tag
+    for (var i in cities) {
+      var city = cities[i];
+      citiesContainer.append('<option value="' + i + '">' + city + '</option>');
+    }
+ 
+    // setup onchange listener
+    citiesContainer.change(function(){
+      var index = $(this).val();
+      var cityName = cities[index];
+      
+      var queryString = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + cityName + '")';
+      $.ajax({
+        url: apiServer,
+        data: {
+          format: 'json',
+          q: queryString,
+        },
+        success: function(data) {
+          console.log(data.query.results);
+        }
+      });
+    });
+  </script>
+
+
+
+
+
+  
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-6">
+      <!-- Large button group -->
+      <div class="btn-group">
+        <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+          請選擇城市 <span class="caret"></span>
+        </button>
+        <ul id="dropdown" class="dropdown-menu" role="menu">  
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">臺北市</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">新北市</a></li> 
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">台中市</a></li> 
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">臺南市</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">高雄市</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">基隆市</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">桃園市</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">新竹市</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">新竹縣</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">苗栗縣</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">彰化縣</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">南投縣</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">雲林縣</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">嘉義市</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">嘉義縣</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">屏東縣</a></li> 
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">宜蘭縣</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">花蓮縣</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">台東縣</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">澎湖縣</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">金門縣</a></li> 
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">連江縣</a></li>
+        </ul>
+      </div>
+      <div><span class="temperature">23</span> &#8451;</div>
+    </div>
+    <div class="col-xs-6">
+      <canvas id="today" width="100" height="100"></canvas>
+      <div class="condition">
+          <span class="date">4 May 2015</span>: Mostly Cloudy
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Forecast</div>
+
+            <!-- Table -->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>5 May 2015</th>
+                  <th>6 May 2015</th>
+                  <th>7 May 2015</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>17-23 &#8451;</td>
+                  <td>18-26 &#8451;</td>
+                  <td>15-24 &#8451;</td>
+                </tr>
+                <tr>
+                  <td><canvas id="day1" width="64" height="64">Clear</canvas></td>
+                  <td><canvas id="day2" width="64" height="64">Mostly Sunny</canvas></td>
+                  <td><canvas id="day3" width="64" height="64">Mostly Cloudy</canvas></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
+<script src="http://darkskyapp.github.io/skycons/skycons.js"></script>
+<script src="myapp.js"></script>
+</body>
+</html>
