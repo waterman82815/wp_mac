@@ -6,70 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Taiwan Weather Forecast</title>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="http://darkskyapp.github.io/skycons/skycons.js"></script>
   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link href="mycss.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
-
-<select id="cities"></select>
- 
-  <script type="text/javascript">
-    var apiServer = 'https://query.yahooapis.com/v1/public/yql';
-    var cities = [ 
-      '臺北市',
-      '新北市',
-      '台中市',
-      '臺南市',
-      '高雄市',
-      '基隆市',
-      '桃園市',
-      '新竹市',
-      '新竹縣',
-      '苗栗縣',
-      '彰化縣',
-      '南投縣',
-      '雲林縣',
-      '嘉義市',
-      '嘉義縣',
-      '屏東縣',
-      '宜蘭縣',
-      '花蓮縣',
-      '台東縣',
-      '澎湖縣',
-      '金門縣',
-      '連江縣',
-    ];
- 
-    var citiesContainer = $('#cities');
- 
-    // render 'select' tag
-    for (var i in cities) {
-      var city = cities[i];
-      citiesContainer.append('<option value="' + i + '">' + city + '</option>');
-    }
- 
-    // setup onchange listener
-    citiesContainer.change(function(){
-      var index = $(this).val();
-      var cityName = cities[index];
-      
-      var queryString = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + cityName + '")';
-      $.ajax({
-        url: apiServer,
-        data: {
-          format: 'json',
-          q: queryString,
-        },
-        success: function(data) {
-          console.log(data.query.results);
-        }
-      });
-    });
-  </script>
-
-
-
 
 
   
@@ -79,7 +20,7 @@
       <!-- Large button group -->
       <div class="btn-group">
         <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-          請選擇城市 <span class="caret"></span>
+          <p id="my_city"></p> <span class="caret"></span>
         </button>
         <ul id="dropdown" class="dropdown-menu" role="menu">  
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">臺北市</a></li>
@@ -106,12 +47,12 @@
               <li role="presentation"><a role="menuitem" tabindex="-1" href="#">連江縣</a></li>
         </ul>
       </div>
-      <div><span class="temperature">23</span> &#8451;</div>
+      <div><span class="temperature"><span id="today_temp"> </span></span> &#8451;</div>
     </div>
     <div class="col-xs-6">
       <canvas id="today" width="100" height="100"></canvas>
       <div class="condition">
-          <span class="date">4 May 2015</span>: Mostly Cloudy
+          <span class="date"><span id = "today_date"></span></span> <span id = "today_weather"></span>
       </div>
     </div>
   </div>
@@ -125,16 +66,16 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>5 May 2015</th>
-                  <th>6 May 2015</th>
-                  <th>7 May 2015</th>
+                  <th id="one"></th>
+                  <th id="two"></th>
+                  <th id="three"></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>17-23 &#8451;</td>
-                  <td>18-26 &#8451;</td>
-                  <td>15-24 &#8451;</td>
+                  <td> <span id="one_low"></span> - <span id="one_high"></span>&#8451;</td>
+                  <td> <span id="two_low"></span> - <span id="two_high"></span>&#8451;</td>
+                  <td> <span id="three_low"></span> - <span id="three_high"></span>&#8451;</td>
                 </tr>
                 <tr>
                   <td><canvas id="day1" width="64" height="64">Clear</canvas></td>
@@ -150,10 +91,208 @@
 </div>
 
 
+ 
+  <script type="text/javascript">
+    var apiServer = 'https://query.yahooapis.com/v1/public/yql';
+    
+    var list  = [
+      "clear-day", "clear-night", "partly-cloudy-day",
+      "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+      "fog"] ;
+
+    var return_skyicon = function(code)
+    {
+      switch(code)
+        {
+        case 31:
+          return list[0] ;
+          break;
+        case 32:
+          return list[0] ;
+          break;
+        case 36:
+          return list[0] ;
+          break;
+        case 34:
+          return list[0] ;
+          break;
+        case 35:
+          return list[0] ;
+          break;
+        case 37:
+          return list[0] ;
+          break;
+        case 38:
+          return list[0] ;
+          break;
+        case 39:
+          return list[0] ;
+          break;
+        case 40:
+          return list[0] ;
+          break;
+        case 45:
+          return list[0] ;
+          break;
+        case 46:
+          return list[0] ;
+          break;
+        case 47:
+          return list[0] ;
+          break;
+        case 33:
+          return list[1] ;
+          break;
+        case 30:
+          return list[2] ;
+          break;
+        case 44:
+          return list[2] ;
+          break;
+        case 29:
+          return list[3] ;
+          break;
+        case 26:
+          return list[4] ;
+          break;
+        case 27:
+          return list[4] ;
+          break;
+        case 28:
+          return list[4] ;
+          break;
+        case 11:
+          return list[5] ;
+          break;
+        case 12:
+          return list[5] ;
+          break;
+        case 18:
+          return list[6] ;
+          break;
+        case 13:
+          return list[7] ;
+          break;
+        case 41:
+          return list[7] ;
+          break;
+        case 42:
+          return list[7] ;
+          break;
+        case 43:
+          return list[7] ;
+          break;
+        case 24:
+          return list[8] ;
+          break;
+        case 20:
+          return list[9] ;
+          break;
+        default :
+          return list[2];
+        }
+
+    }
+
+
+    function getweather(cityName){
+      
+      var queryString = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="' + cityName + '")';
+
+
+      $.ajax({
+        url: apiServer,
+        data: {
+          format: 'json',
+          q: queryString,
+        },
+        success: function(data) {
+          console.log(data.query.results);
+         
+          var temperature = data.query.results.channel.item.condition.temp;
+          temperature= (temperature-32)*5/9;
+          temperature=Math.round(temperature);
+          document.getElementById("today_temp").innerHTML =temperature;
+          
+          document.getElementById("today_date").innerHTML =data.query.results.channel.item.condition.date;
+          document.getElementById("today_weather").innerHTML =data.query.results.channel.item.condition.text;
+
+          document.getElementById("one").innerHTML =data.query.results.channel.item.forecast[1].date;
+          document.getElementById("two").innerHTML =data.query.results.channel.item.forecast[2].date;
+          document.getElementById("three").innerHTML =data.query.results.channel.item.forecast[3].date;
+
+          document.getElementById("one_high").innerHTML =Math.round((data.query.results.channel.item.forecast[1].high-32)*5/9);
+          document.getElementById("two_high").innerHTML =Math.round((data.query.results.channel.item.forecast[2].high-32)*5/9);
+          document.getElementById("three_high").innerHTML =Math.round((data.query.results.channel.item.forecast[3].high-32)*5/9);
+
+          document.getElementById("one_low").innerHTML =Math.round((data.query.results.channel.item.forecast[1].low-32)*5/9);
+          document.getElementById("two_low").innerHTML =Math.round((data.query.results.channel.item.forecast[2].low-32)*5/9);
+          document.getElementById("three_low").innerHTML =Math.round((data.query.results.channel.item.forecast[3].low-32)*5/9);
+
+
+
+        
+
+          // "clear-day", "clear-night", "partly-cloudy-day",
+          //   "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+          //   "fog"
+
+
+          var skycons = new Skycons();
+ 
+          today_weather = (data.query.results.channel.item.condition.text).toLowerCase();
+          
+          var today_weather_code = data.query.results.channel.item.condition.code ;
+          var one_weather_code = data.query.results.channel.item.forecast[1].code;
+          var two_weather_code = data.query.results.channel.item.forecast[2].code;
+          var three_weather_code = data.query.results.channel.item.forecast[3].code;
+
+
+
+          // var day1_weather = (data.query.results.channel.item.forecast[1].text)toLowerCase();
+          // var day2_weather = (data.query.results.channel.item.forecast[2].text)toLowerCase();
+          // var day3_weather = (data.query.results.channel.item.forecast[3].text)toLowerCase();
+
+          skycons.add("today",return_skyicon(Number(today_weather_code)));
+          console.log(today_weather_code);
+          
+          skycons.add("day1", return_skyicon(Number(one_weather_code)));
+          console.log(one_weather_code);
+          
+          skycons.add("day2", return_skyicon(Number(two_weather_code)));
+          console.log(two_weather_code);
+
+          skycons.add("day3", return_skyicon(Number(three_weather_code)));
+          console.log(three_weather_code);
+          
+          // start animation!
+          skycons.play(); 
+
+
+        }
+      });
+    };
+  
+  
+/*
+Get value from Bootstrap dropdown menu
+*/
+$('#dropdown li').on('click', function(){
+    //alert($(this).text());
+    console.log($(this).text());
+    document.getElementById("my_city").innerHTML = ($(this).text());
+    getweather($(this).text());
+});
+
+$('#dropdown :first').click();
+
+
+
+  </script>
+
+
 
 <script src="http://code.jquery.com/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> 
-<script src="http://darkskyapp.github.io/skycons/skycons.js"></script>
-<script src="myapp.js"></script>
 </body>
 </html>
