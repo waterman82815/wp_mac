@@ -1,4 +1,8 @@
 <?php
+
+define('FACEBOOK_SDK_V4_SRC_DIR', '/Users/bravoideas/Desktop/1353/src/Facebook/');
+require __DIR__ . '/Users/bravoideas/Desktop/1353/autoload.php';
+
 session_start();
 // added in v4.0.0
 require_once 'autoload.php';
@@ -16,7 +20,7 @@ use Facebook\HttpClients\FacebookHttpable;
 // init app with app id and secret
 FacebookSession::setDefaultApplication( '902808659762591','2c41660b5c84674c9ce10517ba68fa87' );
 // login helper with redirect_uri
-    $helper = new FacebookRedirectLoginHelper('http://waterman82815.github.io/wp_mac/facebook/fbconfig.php' );
+    $helper = new FacebookRedirectLoginHelper('http://waterman82815.github.io/wp_mac/facebook/1353/fbconfig.php' );
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {
