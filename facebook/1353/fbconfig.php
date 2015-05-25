@@ -1,7 +1,7 @@
 <?php
 
-define('FACEBOOK_SDK_V4_SRC_DIR', '/Users/bravoideas/Desktop/1353/src/Facebook/');
-require __DIR__ . '/Users/bravoideas/Desktop/1353/autoload.php';
+//define('FACEBOOK_SDK_V4_SRC_DIR', '/Users/bravoideas/Desktop/1353/src/Facebook/');
+//require __DIR__ . '/Users/bravoideas/Desktop/1353/autoload.php';
 
 session_start();
 // added in v4.0.0
