@@ -20,7 +20,7 @@ use Facebook\HttpClients\FacebookHttpable;
 // init app with app id and secret
 FacebookSession::setDefaultApplication( '902808659762591','2c41660b5c84674c9ce10517ba68fa87' );
 // login helper with redirect_uri
-    $helper = new FacebookRedirectLoginHelper('http://waterman82815.github.io/wp_mac/facebook/1353/fbconfig.php' );
+    $helper = new FacebookRedirectLoginHelper('http://waterman82815.github.io/wp_mac/facebook/facebook_login.html' );
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {
