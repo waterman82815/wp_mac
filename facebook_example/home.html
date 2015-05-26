@@ -1,9 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Home page</title>
-</head>
-<body>
+<!doctype html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <title>Login with Facebook</title>
+<link href="http://www.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet"> 
+ </head>
+  <body>
+       <!-- Before login --> 
+<div class="container">
+<h1>Login with Facebook</h1>
+           
+<div>
+      <a href="fbconfig.php">Login with Facebook</a></div>
+   
+</body>
+</html>
+
+
 
 <script>
   window.fbAsyncInit = function() {
@@ -22,14 +34,3 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-
-
-<h1>Login with Facebook</h1>
-           
-<div>
-      <a href="fbconfig.php">Login with Facebook</a>
-</div>
-	 
-
-</body>
-</html>
