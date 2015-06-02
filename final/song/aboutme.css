@@ -1,0 +1,155 @@
+/* General Slides */ 
+
+.big_title{
+
+	font-size: 1.0em;
+	color:#8a8683;
+	font-weight: 800;
+	line-height: 24px;　
+}
+
+.small{
+	font-size: 1em;
+	padding-left: 100px;
+	color :#f68f67;
+}
+
+
+.slide{
+	background-attachment: fixed;
+	width:100%;
+	height:auto;
+	position: relative;
+	padding:50px 0;
+}
+
+
+.title{
+	
+	font-size: 1.4em;
+	color: #8a8683;
+	font-weight: 500;
+}
+
+.title_name{
+	
+	font-size: 1em;
+	color: #8a8600;
+	font-weight: 500;
+	padding-left: 85px;
+
+}
+
+.small_name{
+	font-size: 0.6em;
+	color :#f68f67;
+	font-weight: 400;
+}
+
+
+
+/* Slide 1 */ 
+
+#slide1{
+
+	color:#8a8683;
+	background-color:#ffffff;
+}
+#slide1 h1 {
+	font-size: 3.8em;
+	letter-spacing: -3px;
+	color:#8a8683;
+	font-weight: 700;
+}
+#slide1 h2 {
+	font-size: 2em;
+	color: #8a8683;
+	padding-bottom:20px;
+	font-weight: 400;
+}
+
+
+
+
+/* Slide 2 */ 
+
+#slide2{
+	
+	background-color:#f68f67;
+	color:#ffffff;
+
+}
+#slide2 h1 {
+	font-size: 3.8em;
+	letter-spacing: -3px;
+	color:#ffffff;
+	font-weight: 700;
+}
+#slide2 h2 {
+	font-size: 1.5em;
+	color: #ffffff;
+	padding-bottom:20px;
+	font-weight: 400;
+}
+
+
+
+
+/* Slide 3 */ 
+
+#slide3{
+	background-color:#ffffff;
+}
+#slide3 h1 {
+	font-size: 3.8em;
+	letter-spacing: -3px;
+	color:#8a8683;
+	font-weight: 700;
+}
+#slide3 h2 {
+	font-size: 2em;
+	color: #8a8683;
+	padding-bottom:20px;
+	font-weight: 400;
+}
+#test{
+	background-color:#bde2df;
+	color:#ffffff;
+	text-align:center;
+	font-size: 2em;
+	font-weight: 400;
+}
+
+.list{
+    font-size:20px; 
+    text-align:left;
+    line-height: 30px;
+}
+
+
+/* Slide 4 */
+
+#slide4{
+	background-color:#8a8683;
+	color:#ffffff;
+}
+#slide4 h1 {
+	font-size: 3.8em;
+	letter-spacing: -3px;
+/*	line-height: 0px;*/
+	color:#ffffff;
+	font-weight: 700;
+}
+#slide4 h2 {
+	font-size: 2em;
+	color: #ffffff;
+/*	line-height: 0px;*/
+	padding-bottom:20px;
+	font-weight: 400;
+}
+
+.jumbotron
+{
+	background: rgba(0%,0%,0%,0.0);
+}
+

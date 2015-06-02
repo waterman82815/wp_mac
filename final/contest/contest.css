@@ -1,0 +1,9 @@
+.description{
+  text-align:center;
+}
+
+a.c_button {
+position:relative; 
+right:45%;
+float:right;
+}
