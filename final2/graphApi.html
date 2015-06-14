@@ -58,10 +58,10 @@
 			  success: function(user) {
 			    if (!user.existed()) {
 			      alert("註冊完成並且透過臉書登入");
-			      //window.location = 'index.html';
+			      window.location = 'index.html';
 			    } else {
 			      alert("透過臉書登入成功");
-			      //window.location = 'index.html';
+			      window.location = 'index.html';
 			    }
 				indexView();//切換至預先寫好登入後的介面
 				FB.getLoginStatus(function(response) {
