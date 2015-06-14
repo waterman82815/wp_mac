@@ -1,0 +1,29 @@
+.breadcrumb{
+	margin-top: 20px;
+	background-color : black !important;
+}
+
+body{
+	background-color: black;
+}
+
+.breadcrumb a{
+	color: #FFA042 !important;
+	font-size:large;
+
+}
+
+.logo{
+	width: 95%;
+	display:block;
+  	margin: auto;
+  	margin-bottom: 25px;
+}
+
+.slide_image{
+
+	width: 50% !important;
+	display:block !important;
+  	margin: auto !important;
+
+}

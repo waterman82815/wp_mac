@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="UTF-8">
+          <title>Login</title>						
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+          <link rel="stylesheet" href="css/reset.css">	
+          <link rel="stylesheet" href="css/main.css">
+          <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+	</head>
+	<body>
+	    <header><p class="notLogin">未登入</p><button id="logoutBtn" class="btn btn-danger">登出</button></header>	
+	    <article>
+			<div id="indexView">
+			   <div id="fbImgView"></div>
+		    </div>
+	    	<form id="loginView">
+				  <label>username:<input class="form-control" id="username" type="text" placeholder="請輸入使用者名稱..."></label>
+				  <label>password:<input class="form-control" id="password" type="password" placeholder="請輸入密碼..."></label>
+				  <button id="loginBtn" class="btn btn-success" type="submit">登入</button>
+				  <button id="signupBtn" class="btn btn-info" type="submit">註冊</button>
+				  <button id="fbloginBtn" class="btn btn-primary" type="submit">臉書登入</button>
+			</form>
+	    </article>	
+		
+	<script>
+		//step1:https://www.parse.com/docs/js/guide#users-facebook-users
+		
+        // Initialize Parse
+        Parse.initialize("Xb0aMmf2Unia4t5RsviwO0ul2Tqgg1YyrckPwHTN", "Pw30rlo7AGDM8GW33hLA0kLnEMfVyaaAq6y1ekn9");
+
+        window.fbAsyncInit = function() {
+        Parse.FacebookUtils.init({ // this line replaces FB.init({
+           appId      : '1582722888674859', // Facebook App ID
+           status     : true,  // check Facebook Login status
+           cookie     : true,  // enable cookies to allow Parse to access the session
+           xfbml      : true,  // initialize Facebook social plugins on the page
+           version    : 'v2.3' // point to the latest Facebook Graph API version
+        });
+          // Run code after the Facebook SDK is loaded.
+        };
+
+        (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+		function fblogin(){
+		    //step2:https://developers.facebook.com/docs/graph-api/using-graph-api/v2.3	
+			
+			Parse.FacebookUtils.logIn(null, {
+			  success: function(user) {
+			    if (!user.existed()) {
+			      alert("註冊完成並且透過臉書登入");
+			    } else {
+			      alert("透過臉書登入成功");
+			    }
+				indexView();//切換至預先寫好登入後的介面
+				FB.getLoginStatus(function(response) {
+				     if (response.status === 'connected') {
+				         FB.api('/me/picture?type=large', function (response) {
+						    $('#fbImgView').html("<h5>Here are your profile photo</h5><img src="+response.data.url+" crossorigin=\"anonymous\" id=preview1 />");          
+				         });
+						 
+				         FB.api('/me', function (response) {
+							 console.log(response);
+							 $('#fbImgView').append("<h1>Welcome , "+(response['gender']=="male"?"Mr. ":"Miss ")+" "+response['first_name']+"</h1>");
+				         });
+						
+				     }
+			     }); 
+			  },
+			  error: function(user, error) {
+			    alert("使用者取消登入或沒有授權");
+			  }
+			});
+		}
+		
+	</script>
+    <script src="js/graphApi.js"></script>		   	
+    </body>
+</html>
