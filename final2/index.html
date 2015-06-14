@@ -19,6 +19,7 @@
     <li><a href="#">k歌擂台</a></li>
     <li><a href="#">基本教學</a></li>
     <li><a href="graphApi.html">登入</a></li>
+    <p class="notLogin">未登入</p><button id="logoutBtn" class="btn btn-danger">登出</button>
 
   </ol>
 
@@ -95,9 +96,71 @@
     </a>
   </div>
 
+<!-- end slide -->
 
 
+<!-- begin log control  script -->
 
+  <script>
+    //step1:https://www.parse.com/docs/js/guide#users-facebook-users
+    
+        // Initialize Parse
+        Parse.initialize("Xb0aMmf2Unia4t5RsviwO0ul2Tqgg1YyrckPwHTN", "Pw30rlo7AGDM8GW33hLA0kLnEMfVyaaAq6y1ekn9");
+
+        window.fbAsyncInit = function() {
+        Parse.FacebookUtils.init({ // this line replaces FB.init({
+           appId      : '1582722888674859', // Facebook App ID
+           status     : true,  // check Facebook Login status
+           cookie     : true,  // enable cookies to allow Parse to access the session
+           xfbml      : true,  // initialize Facebook social plugins on the page
+           version    : 'v2.3' // point to the latest Facebook Graph API version
+        });
+          // Run code after the Facebook SDK is loaded.
+        };
+
+        (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+    function fblogin(){
+        //step2:https://developers.facebook.com/docs/graph-api/using-graph-api/v2.3 
+      
+      Parse.FacebookUtils.logIn(null, {
+        success: function(user) {
+          if (!user.existed()) {
+            alert("註冊完成並且透過臉書登入");
+          } else {
+            alert("透過臉書登入成功");
+          }
+        indexView();//切換至預先寫好登入後的介面
+        FB.getLoginStatus(function(response) {
+             if (response.status === 'connected') {
+                 FB.api('/me/picture?type=large', function (response) {
+                $('#fbImgView').html("<h5>Here are your profile photo</h5><img src="+response.data.url+" crossorigin=\"anonymous\" id=preview1 />");          
+                 });
+             
+                 FB.api('/me', function (response) {
+               console.log(response);
+               $('#fbImgView').append("<h1>Welcome , "+(response['gender']=="male"?"Mr. ":"Miss ")+" "+response['first_name']+"</h1>");
+                 });
+            
+             }
+           }); 
+        },
+        error: function(user, error) {
+          alert("使用者取消登入或沒有授權");
+        }
+      });
+    }
+    
+  </script>
+    <script src="js/graphApi.js"></script>
+
+<!-- end log control  script -->
 
 </body>
 </html>
