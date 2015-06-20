@@ -3,6 +3,7 @@
 	background-color : black !important;
 }
 
+
 body{
 	background-color: black;
 }
@@ -13,12 +14,15 @@ body{
 
 }
 
+
+
 .logo{
 	width: 95%;
 	display:block;
   	margin: auto;
   	margin-bottom: 25px;
 }
+
 
 .slide_image{
 
@@ -27,3 +31,45 @@ body{
   	margin: auto !important;
 
 }
+
+.audio_image{
+	float: left;
+	margin-right: 1.25%;
+	padding-left:3%;
+
+}
+
+.audio_image input{
+	width: 11%;
+}
+
+.foot_right{
+	text-align: center;
+	font-size: 30px;
+	color: white;
+}
+
+.foot{
+	text-align: center;
+	color: orange;
+	font-size: 25px;
+}
+
+.intro{
+	background-image: url(../img/green_frame.png);
+	background-size: 90% 90%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.logo_video{
+	margin-left: auto;
+    margin-right: auto;
+    display: block;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+
+}
+
