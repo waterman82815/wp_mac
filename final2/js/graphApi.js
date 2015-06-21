@@ -42,6 +42,7 @@ $(document).on('click','#logoutBtn',function(e){
 	e.preventDefault();
 	logout();
 });
+
 function loginView(){
 	$('#logoutBtn').hide();
 	$('#indexView').hide();
