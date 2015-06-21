@@ -73,3 +73,14 @@ body{
 
 }
 
+.song_video{
+	margin-left: auto;
+    margin-right: auto;
+    display: block;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+
+}
+
