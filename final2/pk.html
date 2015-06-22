@@ -14,28 +14,61 @@
 <body>
 
 <script type="text/javascript">
-    
-  var q_title=new Array("","請問「下一站天后」歌曲中，唱到哪一首百貨公司？");
-  var q_a=new Array("","(A) Sogo","");
-  var q_b=new Array("","(B) 希慎","");
-  var q_c=new Array("","(C) 大丸百貨","");
-  var q_d=new Array("","(D) 三越百貨","");
+                   
+  var q_title=new Array("","請問海闊天空的原唱是誰？","發生在2014年的香港雨傘運動主題曲是？","TWINS的下一站天后有唱到哪個香港百貨公司？","廣東話的「唔該」是什麼意思？","以下何者非香港馳名的食物？");
+  var q_a=new Array("","(A)五月天","(A)海闊天空","(A)大丸百貨","(A)去吃屎","(A)蛋塔");
+  var q_b=new Array("","(B)利菁","(B)K歌之王","(B)SOGO","(B)我愛你","(B)菠蘿油");
+  var q_c=new Array("","(C)Beyond","(C)喜歡你","(C)希慎廣場","(C)不應該","(C)西多士");
+  var q_d=new Array("","(D)小甜甜布蘭妮","(D)好心分手","(D)海港城","(D)謝謝","(D)絲襪奶茶");
   
   var ans=new Array("","");
-  var uans=new Array("","");
+
+  var point = 0;
+  var i =1;
 
   function printp() {
 
-
-
-    document.getElementById("q_title").innerHTML = q_title[1];
-    document.getElementById("q_a").innerHTML = q_a[1];
-    document.getElementById("q_b").innerHTML = q_b[1];
-    document.getElementById("q_c").innerHTML = q_c[1];
-    document.getElementById("q_d").innerHTML = q_d[1];
+    document.getElementById("q_title").innerHTML = q_title[i];
+    document.getElementById("q_a").innerHTML = q_a[i];
+    document.getElementById("q_b").innerHTML = q_b[i];
+    document.getElementById("q_c").innerHTML = q_c[i];
+    document.getElementById("q_d").innerHTML = q_d[i];
     document.getElementById("start").style.visibility='hidden';
 
-}
+  }
+
+  function agame(){
+    
+    ans[i]=document.getElementById("q_a").innerHTML;
+    i++; 
+    printp();
+
+  }
+
+  function bgame(){
+    
+    ans[i]=document.getElementById("q_b").innerHTML;
+    i++; 
+    printp(); 
+
+  }
+
+  function cgame(){
+    
+    ans[i]=document.getElementById("q_c").innerHTML; 
+    i++; 
+    printp();
+
+  }
+  function dgame(){
+    
+    ans[i]=document.getElementById("q_d").innerHTML; 
+    i++; 
+    printp();
+
+  }
+
+
 
 
 
@@ -61,10 +94,10 @@
       <p id="q_title"></p>
   	</div>
       
-  		<div class= "question_content"><p class='button' id="q_a"></p></div>
-      <div class= "question_content"><p class='button' id="q_b"></p></div>
-      <div class= "question_content"><p class='button' id="q_c"></p></div>
-      <div class= "question_content"><p class='button' id="q_d"></p></div>
+  		<div class= "question_content"><p class='button' id="q_a" onclick="agame()"></p></div>
+      <div class= "question_content"><p class='button' id="q_b" onclick="bgame()"></p></div>
+      <div class= "question_content"><p class='button' id="q_c" onclick="cgame()"></p></div>
+      <div class= "question_content"><p class='button' id="q_d" onclick="dgame()"></p></div>
   </div>  	
 </div>
 
