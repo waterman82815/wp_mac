@@ -15,7 +15,21 @@
 <script type="text/javascript">
 <!--
 	//music陣列用來存放各種音效的路徑
-	var music=new Array("http://www.taipeimun.org/music/cantonese1.mp3","013kt509.mp3","013kt498.mp3");
+	var music=new Array("http://www.taipeimun.org/music/zero.mp3",
+    "http://www.taipeimun.org/music/one.mp3",
+    "http://www.taipeimun.org/music/two.mp3",
+    "http://www.taipeimun.org/music/three.mp3",
+    "http://www.taipeimun.org/music/four.mp3",
+    "http://www.taipeimun.org/music/five.mp3",
+    "http://www.taipeimun.org/music/six.mp3",
+    "http://www.taipeimun.org/music/seven.mp3",
+    "http://www.taipeimun.org/music/eight.mp3",
+    "http://www.taipeimun.org/music/nine.mp3",
+    "http://www.taipeimun.org/music/ten.mp3",
+    "http://www.taipeimun.org/music/hundred.mp3",
+    "http://www.taipeimun.org/music/thousand.mp3",
+    "http://www.taipeimun.org/music/tenthousand.mp3"//13
+    );
 
 	function playSound(i){
 		//在Div內放置Embed並指定其src = 某音效位置
@@ -49,76 +63,74 @@
 <img class="logo" src="./basic_pic/number/numbers.png">
 <div class="audio_image">
 <input type="image" img src="./basic_pic/number/0.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/number/1.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/number/2.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/number/3.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/number/4.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/number/5.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/number/6.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/number/7.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/number/8.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/number/9.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/number/10.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/number/100.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/number/1000.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/number/10000.png" onclick="playSound(0);">
+<input type="image" img src="./basic_pic/number/1.png" onclick="playSound(1);">
+<input type="image" img src="./basic_pic/number/2.png" onclick="playSound(2);">
+<input type="image" img src="./basic_pic/number/3.png" onclick="playSound(3);">
+<input type="image" img src="./basic_pic/number/4.png" onclick="playSound(4);">
+<input type="image" img src="./basic_pic/number/5.png" onclick="playSound(5);">
+<input type="image" img src="./basic_pic/number/6.png" onclick="playSound(6);">
+<input type="image" img src="./basic_pic/number/7.png" onclick="playSound(7);">
+<input type="image" img src="./basic_pic/number/8.png" onclick="playSound(8);">
+<input type="image" img src="./basic_pic/number/9.png" onclick="playSound(9);">
+<input type="image" img src="./basic_pic/number/10.png" onclick="playSound(10);">
+<input type="image" img src="./basic_pic/number/100.png" onclick="playSound(11);">
+<input type="image" img src="./basic_pic/number/1000.png" onclick="playSound(12);">
+<input type="image" img src="./basic_pic/number/10000.png" onclick="playSound(13);">
 <br clear="all" />
 </div>
 
 <img class="logo" src="./basic_pic/sub/sub.png">
 <div class="audio_image">
-<input type="image" img src="./basic_pic/sub/i.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/sub/he_she.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/sub/It.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/sub/you.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/sub/yous.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/sub/they.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/sub/we.png" onclick="playSound(0);">
+<input type="image" img src="./basic_pic/sub/i.png" onclick="playSound(14);">
+<input type="image" img src="./basic_pic/sub/he_she.png" onclick="playSound(15);">
+<input type="image" img src="./basic_pic/sub/It.png" onclick="playSound(16);">
+<input type="image" img src="./basic_pic/sub/you.png" onclick="playSound(17);">
+<input type="image" img src="./basic_pic/sub/yous.png" onclick="playSound(18);">
+<input type="image" img src="./basic_pic/sub/they.png" onclick="playSound(19);">
+<input type="image" img src="./basic_pic/sub/we.png" onclick="playSound(20);">
 <br clear="all" />
 </div>
 
 
 <img class="logo" src="./basic_pic/direction/direction.png">
 <div class="audio_image">
-<input type="image" img src="./basic_pic/direction/left.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/direction/right.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/direction/here.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/direction/there.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/direction/back.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/direction/front.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/direction/howtogo.png" onclick="playSound(0);">
+<input type="image" img src="./basic_pic/direction/left.png" onclick="playSound(21);">
+<input type="image" img src="./basic_pic/direction/right.png" onclick="playSound(22);">
+<input type="image" img src="./basic_pic/direction/here.png" onclick="playSound(23);">
+<input type="image" img src="./basic_pic/direction/there.png" onclick="playSound(24);">
+<input type="image" img src="./basic_pic/direction/back.png" onclick="playSound(25);">
+<input type="image" img src="./basic_pic/direction/front.png" onclick="playSound(26);">
+<input type="image" img src="./basic_pic/direction/howtogo.png" onclick="playSound(27);">
 <br clear="all" />
 </div>
 
 <img class="logo" src="./basic_pic/life/life.png">
 <div class="audio_image">
-<input type="image" img src="./basic_pic/life/howmuch.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/life/goodmorning.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/life/cheap.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/life/expensive.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/life/toilet.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/life/poopoo.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/life/coldwater.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/life/cold.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/life/hot.png" onclick="playSound(0);">
+<input type="image" img src="./basic_pic/life/howmuch.png" onclick="playSound(28);">
+<input type="image" img src="./basic_pic/life/goodmorning.png" onclick="playSound(29);">
+<input type="image" img src="./basic_pic/life/cheap.png" onclick="playSound(30);">
+<input type="image" img src="./basic_pic/life/expensive.png" onclick="playSound(31);">
+<input type="image" img src="./basic_pic/life/toilet.png" onclick="playSound(32);">
+<input type="image" img src="./basic_pic/life/poopoo.png" onclick="playSound(33);">
+<input type="image" img src="./basic_pic/life/coldwater.png" onclick="playSound(34);">
+<input type="image" img src="./basic_pic/life/cold.png" onclick="playSound(35);">
+<input type="image" img src="./basic_pic/life/hot.png" onclick="playSound(36);">
 <br clear="all" />
 </div>
 
 <img class="logo" src="./basic_pic/people/people.png">
 <div class="audio_image">
-<input type="image" img src="./basic_pic/people/p1.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/people/p2.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/people/p3.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/people/p4.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/people/p5.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/people/p6.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/people/p7.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/people/p8.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/people/p9.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/people/p10.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/people/p11.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/people/p12.png" onclick="playSound(0);">
-<input type="image" img src="./basic_pic/people/p13.png" onclick="playSound(0);">
+<input type="image" img src="./basic_pic/people/p1.png" onclick="playSound(37);">
+<input type="image" img src="./basic_pic/people/p2.png" onclick="playSound(38);">
+<input type="image" img src="./basic_pic/people/p3.png" onclick="playSound(39);">
+<input type="image" img src="./basic_pic/people/p4.png" onclick="playSound(40);">
+<input type="image" img src="./basic_pic/people/p5.png" onclick="playSound(41);">
+<input type="image" img src="./basic_pic/people/p6.png" onclick="playSound(42);">
+<input type="image" img src="./basic_pic/people/p7.png" onclick="playSound(43);">
+<input type="image" img src="./basic_pic/people/p8.png" onclick="playSound(44);">
+<input type="image" img src="./basic_pic/people/p9.png" onclick="playSound(45);">
+<input type="image" img src="./basic_pic/people/p10.png" onclick="playSound(46);">
+<input type="image" img src="./basic_pic/people/p13.png" onclick="playSound(47);">
 <br clear="all" />
 </div>
 

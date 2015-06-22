@@ -9,10 +9,39 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/normal.css" type="text/css">
 
-
 </head>
 
 <body>
+
+<script type="text/javascript">
+    
+  var q_title=new Array("","請問「下一站天后」歌曲中，唱到哪一首百貨公司？");
+  var q_a=new Array("","(A) Sogo","");
+  var q_b=new Array("","(B) 希慎","");
+  var q_c=new Array("","(C) 大丸百貨","");
+  var q_d=new Array("","(D) 三越百貨","");
+  
+  var ans=new Array("","");
+  var uans=new Array("","");
+
+  function printp() {
+
+
+
+    document.getElementById("q_title").innerHTML = q_title[1];
+    document.getElementById("q_a").innerHTML = q_a[1];
+    document.getElementById("q_b").innerHTML = q_b[1];
+    document.getElementById("q_c").innerHTML = q_c[1];
+    document.getElementById("q_d").innerHTML = q_d[1];
+    document.getElementById("start").style.visibility='hidden';
+
+}
+
+
+
+</script>
+
+
 
   <ol class="breadcrumb"   align = "center">
     <li><a href="index.html">首頁</a></li>
@@ -28,15 +57,16 @@
   <div class = "pk">
 
   	<div class= "question_title">
-  		<p>請問「下一站天后」歌曲中，唱到哪一首百貨公司？</p>
+      <button class='button 'id="start" onclick="printp()">Start</button>
+      <p id="q_title"></p>
   	</div>
-  		<div class= "question_content"><p>(A) SOGO</p></div>
-  		<div class= "question_content"><P>(B) 希慎</P></div>
-  		<div class= "question_content"><p>(C) 大丸百貨</p></div>
-  		<div class= "question_content"><p>(D) 三越百貨</p></div>
-
-  	</div>  	
-  </div>
+      
+  		<div class= "question_content"><p class='button' id="q_a"></p></div>
+      <div class= "question_content"><p class='button' id="q_b"></p></div>
+      <div class= "question_content"><p class='button' id="q_c"></p></div>
+      <div class= "question_content"><p class='button' id="q_d"></p></div>
+  </div>  	
+</div>
 
 <footer>
 
@@ -45,7 +75,8 @@
        <div class="foot"><p>關於我們</p></div>
        <div class="foot"><p>聯絡我們</p></div>>
        <div class="foot_right"><p>&copy; 2015 All Rights Reserved</p></div>
-    </footer>
+
+</footer>
 
  </body>
  </html>
