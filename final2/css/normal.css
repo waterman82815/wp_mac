@@ -4,6 +4,7 @@
 }
 
 
+
 body{
 	background-color: black;
 }
@@ -63,7 +64,7 @@ body{
 
 .pk{
 	background-image: url(../pk_img/bg.png);
-	background-size: 100% 120%;
+	background-size: 100% 121.5%;
 	background-repeat: no-repeat;
 	background-position: center;
 
@@ -145,10 +146,11 @@ body{
 	text-align: left;
 	color: white;
 	font-size: 20px;
-	width: 60%;
+	width: 40%;
   	margin: auto;
 
 }
+
 
 .special{
 	color: red;
