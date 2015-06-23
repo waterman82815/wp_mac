@@ -166,6 +166,10 @@ body{
 	width: 10%;
 }
 
+.nav-wrapper{
+	background-color: #444444;
+}
+
 .button {
     padding: 5px 10px;
     display: inline;
