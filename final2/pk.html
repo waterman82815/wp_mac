@@ -41,8 +41,10 @@
 
   function printp() {
 
+
     if(i<6)
     {
+
     document.getElementById("q_title").innerHTML = q_title[i];
     document.getElementById("q_a").innerHTML = q_a[i];
     document.getElementById("q_b").innerHTML = q_b[i];
@@ -50,6 +52,9 @@
     document.getElementById("q_d").innerHTML = q_d[i];
     document.getElementById("start").style.visibility='hidden';
     }
+
+
+
     else
     {
     finish();
@@ -59,6 +64,10 @@
     document.getElementById("q_c").style.visibility='hidden';
     document.getElementById("q_d").style.visibility='hidden';
     document.getElementById("getPoint").innerHTML = point;
+    document.getElementById("share_b").style.visibility='visibility';
+
+
+
     }
 
   }
@@ -143,8 +152,12 @@
       <div class= "question_content"><p class='button' id="q_b" onclick="bgame()"></p></div>
       <div class= "question_content"><p class='button' id="q_c" onclick="cgame()"></p></div>
       <div class= "question_content"><p class='button' id="q_d" onclick="dgame()"></p></div>
-
-      <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"><button onclick="share()">share</button></div>
+      
+      <div class= "question_content">
+        <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button">
+        <a id="share_b" onclick="share()"><img class="share_img" src="./basic_pic/people/p7.png"></a>
+        </div>
+      </div>
 
 </div>
 

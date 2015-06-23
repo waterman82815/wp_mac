@@ -162,11 +162,14 @@ body{
 	font-size: 25px;
 }
 
+.share_img{
+	width: 10%;
+}
 
 .button {
     padding: 5px 10px;
     display: inline;
- /*   background: #000 url(button.png) repeat-x bottom;  */
+    background: #000 ;
     border: none;
     color: #fff;
     cursor: pointer;
