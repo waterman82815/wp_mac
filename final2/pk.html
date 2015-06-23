@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>K歌之王！</title>
+  <title>齊唱學廣東話！</title>
 
   <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -12,6 +12,18 @@
 </head>
 
 <body>
+
+
+<div id="fb-root"></div>
+<script>
+
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "http://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.3&appId=1582722888674859";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <script type="text/javascript">
                    
@@ -92,7 +104,16 @@
       }
   }
 
-
+  function share(){
+    FB.ui({       display:'iframe',       
+                  method: 'feed',
+                  name: '我就是K歌之王',
+                  caption:'今天我在K歌擂台玩的很開心', 
+                  description: '齊唱學廣東話教你如何唱粵語歌，也提供最詳盡的粵語教學',
+                  link: 'http://waterman82815.github.io/wp_mac/final2/index.html'}
+                  //picture:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2JQZ3VgPSMzdwmB6btrLkri2-1Gz6aPiLWeLRnZimqmaLBVv8rQ'}
+                  );
+  }
 
 
 </script>
@@ -123,7 +144,15 @@
       <div class= "question_content"><p class='button' id="q_c" onclick="cgame()"></p></div>
       <div class= "question_content"><p class='button' id="q_d" onclick="dgame()"></p></div>
 
+      <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"><button onclick="share()">share</button></div>
+
 </div>
+
+
+
+
+  
+
 
 <footer>
 

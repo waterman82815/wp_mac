@@ -23,6 +23,13 @@ body{
   	margin-bottom: 25px;
 }
 
+.about_logo{
+	width: 20%;
+	display:block;
+  	margin: auto;
+  	margin-bottom: 25px;
+}
+
 
 .slide_image{
 
@@ -159,7 +166,7 @@ body{
 .button {
     padding: 5px 10px;
     display: inline;
-    background: #000 url(button.png) repeat-x bottom;
+ /*   background: #000 url(button.png) repeat-x bottom;  */
     border: none;
     color: #fff;
     cursor: pointer;
