@@ -20,6 +20,62 @@ $(function () {
 })
 </script>
 
+
+<script type="text/javascript">
+var navigator = window.navigator;
+navigator.getUserMedia = (
+  navigator.getUserMedia ||
+    navigator.webkitGetUserMedia ||
+    navigator.mozGetUserMedia ||
+    navigator.msGetUserMedia
+);
+
+var Context = window.AudioContext || window.webkitAudioContext;
+var context = new Context();
+
+
+var mediaStream;
+var rec;
+
+function record() {
+  // ask for permission and start recording
+  navigator.getUserMedia({audio: true}, function(localMediaStream){
+    mediaStream = localMediaStream;
+
+    // create a stream source to pass to Recorder.js
+    var mediaStreamSource = context.createMediaStreamSource(localMediaStream);
+
+    // create new instance of Recorder.js using the mediaStreamSource
+    rec = new Recorder(mediaStreamSource, {
+      // pass the path to recorderWorker.js file here
+      workerPath: '/bower_components/Recorderjs/recorderWorker.js'
+    });
+
+    // start recording
+    rec.record();
+  }, function(err){
+    console.log('Browser not supported');
+  });
+}
+
+
+function stop() {
+  // stop the media stream
+  mediaStream.stop();
+
+  // stop Recorder.js
+  rec.stop();
+
+  // export it to WAV
+  rec.exportWAV(function(e){
+    rec.clear();
+    Recorder.forceDownload(e, "filename.wav");
+  });
+}
+
+
+</script>
+
 <nav class="navbar navbar-inverse">
   
     <a class="navbar-brand" href="index.html">首頁</a>
@@ -69,9 +125,11 @@ $(function () {
   <p>隨處蕩 多冰冷</p>
   <p>以往為了自我掙扎</p>
   <p>從不知 她的痛苦</p>
-
-
 </div>
+
+<button onclick="record()">Record</button>
+<button onclick="stop()">Stop</button>
+
 
 <footer>
 
