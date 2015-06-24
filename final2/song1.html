@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/normal.css" type="text/css">
 
+  <script src="./record/api/Recorderjs/recorder.js">
+    </script>
+
 
 </head>
 <body>
@@ -18,6 +21,24 @@
 $(function () {
   $('[data-toggle="popover"]').popover()
 })
+</script>
+
+
+<script type="text/javascript">
+<!--
+  //music陣列用來存放各種音效的路徑
+  var music=new Array(
+    "http://www.taipeimun.org/music/miss.mp3",
+    "http://www.taipeimun.org/music/hope.mp3",
+    "http://www.taipeimun.org/music/touch.mp3",
+    "http://www.taipeimun.org/music/hand.mp3"
+    );
+
+  function playSound(i){
+    //在Div內放置Embed並指定其src = 某音效位置
+    document.getElementById("sounds").innerHTML = "<embed width=0 height=0 src="+music[i]+" autostart='true'></embed>";
+  }
+//-->
 </script>
 
 
@@ -101,9 +122,9 @@ function stop() {
 
 <div class="lyric_content">
 
-  <p>細雨帶風濕透黃昏的街道&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="sai3 jyu5 daai3 fung1 sap1 tau3 wong4 fan1 dik1 gaai1 dou6">
-  點我看羅馬拼音！
-</button></p>
+  <p>細雨帶風濕透黃昏的街道&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="sai3 jyu5 daai3 fung1 sap1 tau3 wong4 fan1 dik1 gaai1 dou6">羅馬拼音！
+    </button>
   <p>抹去雨水雙眼無故地仰望</p>
   <p>望向孤單的晚燈</p>
   <p>是那傷感的記憶</p>

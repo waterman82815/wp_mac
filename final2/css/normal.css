@@ -156,6 +156,10 @@ body{
 
 }
 
+.button_img{
+	background-color: black;
+}
+
 /*nav*/
 .nav{
   background-color:black;
