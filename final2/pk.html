@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/normal.css" type="text/css">
 
+  <link rel="icon" href="./img/icon.png" type="image/x-icon">
+
 </head>
 
 <body>
@@ -148,6 +150,12 @@
   }
 
   function share(){
+
+    if(i!=6){
+      alert("你還沒玩完呢！！！！！");
+      alert("玩完再來分享也不遲唷～")
+    }
+    else{
     FB.ui({       display:'iframe',       
                   method: 'feed',
                   name: slogan_name,
@@ -156,9 +164,9 @@
                   link: 'http://waterman82815.github.io/wp_mac/final2/index.html',
                   picture:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2JQZ3VgPSMzdwmB6btrLkri2-1Gz6aPiLWeLRnZimqmaLBVv8rQ'}
                   );
-  }
+      }
 
-
+    }
 </script>
 
 
@@ -206,8 +214,8 @@
 
       <img class="logo" src="./img/longbar.png">
 
-       <div class="foot"><p>關於我們</p></div>
-       <div class="foot"><p>聯絡我們</p></div>>
+       <div class="foot"><a href="./about.html">&reg;關於我們</a></div>
+       <div class="foot"><a href="mailto:waterman82815@gmail.com">&reg;聯絡我們</a></div>>
        <div class="foot_right"><p>&copy; 2015 All Rights Reserved</p></div>
 
 </footer>

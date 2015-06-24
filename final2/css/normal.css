@@ -54,14 +54,19 @@ body{
 
 .foot_right{
 	text-align: center;
-	font-size: 30px;
-	color: white;
+	font-size: 23px;
+	color: #888888;
+	margin-bottom: 50px;
 }
 
 .foot{
 	text-align: center;
-	color: orange;
-	font-size: 25px;
+	color: #FFC800;
+	font-size: 18px;
+}
+
+.foot a{
+	color:#FFC800;
 }
 
 .intro{
@@ -297,4 +302,8 @@ body{
 
 .ron{
 	width: 170px;
+}
+
+.ron:hover{
+	cursor: pointer;
 }
