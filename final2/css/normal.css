@@ -156,6 +156,53 @@ body{
 
 }
 
+/*nav*/
+.nav{
+  background-color:black;
+  margin-bottom: 10px;
+}
+
+.nav ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  margin-top: 30px;
+}
+
+.nav li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  background-color:#FFC800;
+  height: 40px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #FFC800;
+  display: block;
+  /*transition:.3s;*/
+  background-color:black;
+}
+
+.nav a:hover {
+  background-color: #000;
+  font-size: 1.5em;
+  border-style: solid ;
+  color: #FFC800;
+  
+}
+
+.nav a.active {
+ 
+  border-style:solid;
+  color: #FFC800;
+  cursor: default;
+}
+/*nav*/
 
 .special{
 	color: red;
