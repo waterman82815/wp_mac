@@ -163,6 +163,18 @@ body{
 
 }
 
+.lyric_content a{
+	text-align: left;
+	color: yellow;
+	font-size: 20px;
+	width: 40%;
+  	margin: auto;
+}
+
+.lyric_content a:hover{
+	cursor: pointer;
+}
+
 .button_img{
 	background-color: black;
 }
