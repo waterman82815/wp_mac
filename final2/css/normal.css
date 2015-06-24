@@ -261,3 +261,28 @@ body{
 .button.large:hover { background-position: 0 -35px; }
 .button.large:active { padding: 8px 12px 6px; background-position: 0 top; }
 
+
+.record{
+
+	height: 250px;
+
+}
+
+
+.record_img{
+
+	width: 130px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+
+
+}
+
+.record_img:hover
+{
+
+	cursor: pointer;
+
+}
+
+
