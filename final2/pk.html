@@ -40,10 +40,13 @@
 
   var slogan=new Array("K歌之王鐵定不是你！","在唱的用心良苦一點吧！","勁用力唱出你要的幸福吧！","香江要為你閃耀喇！","麥克風被你征服喇！","請問你係陳奕迅嗎？");
 
+  var cap=new Array("我一題都沒答對ＱＱ","我只答對一題...","還好有對兩題 > <","我答對三題耶！","超強答對四題！","全部都答對！！！");
+
   var point = 0;
   var i =1;
 
   var slogan_name;
+  var cap_name;
 
   function printp() {
 
@@ -75,31 +78,37 @@
       {
         document.getElementById("slo").innerHTML = slogan[0];
         slogan_name=slogan[0];
+        cap_name=cap[0];
       }
     if(point===20)
       {
         document.getElementById("slo").innerHTML = slogan[1];
         slogan_name=slogan[1];
+        cap_name=cap[1];
       }
     if(point===40)
       {
         document.getElementById("slo").innerHTML = slogan[2];
         slogan_name=slogan[2];
+        cap_name=cap[2];
       }
     if(point===60)
       {
         document.getElementById("slo").innerHTML = slogan[3];
         slogan_name=slogan[3];
+        cap_name=cap[3];
       }
     if(point===80)
       {
         document.getElementById("slo").innerHTML = slogan[4];
         slogan_name=slogan[4];
+        cap_name=cap[4];
       }
     if(point===100)
       {
         document.getElementById("slo").innerHTML = slogan[5];
         slogan_name=slogan[5];
+        cap_name=cap[5];
       }
 
     document.getElementById("share_b").style.visibility='visibility';
