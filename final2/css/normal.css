@@ -25,10 +25,11 @@ body{
 }
 
 .logo_about{
-	width: 98%;
+	width: 95%;
 	display:block;
   	margin: auto;
   	margin-bottom: 25px;
+  	margin-right: 100px;
 }
 
 
