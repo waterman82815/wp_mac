@@ -216,7 +216,10 @@ body{
 }
 
 .share_img{
-	width: 10%;
+	width: 8%;
+}
+.share_img:hover{
+	cursor: pointer;
 }
 
 .nav-wrapper{
