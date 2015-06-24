@@ -24,8 +24,8 @@ body{
   	margin-bottom: 25px;
 }
 
-.about_logo{
-	width: 20%;
+.logo_about{
+	width: 98%;
 	display:block;
   	margin: auto;
   	margin-bottom: 25px;
@@ -166,7 +166,7 @@ body{
 .nav{
   background-color:black;
   margin-bottom: 10px;
-  height: 50px;
+  height: 80px;
 }
 
 .nav ul {
@@ -179,7 +179,7 @@ body{
 
 .nav li {
   font-family: 'Oswald', sans-serif;
-  font-size: 1.2em;
+  font-size: 1.5em;
   line-height: 40px;
   background-color:#FFC800;
   height: 40px;
@@ -197,7 +197,7 @@ body{
 
 .nav a:hover {
   background-color: #000;
-  font-size: 1.5em;
+  font-size: 1.65em;
   border-style: solid ;
   color: #FFC800;
   
@@ -269,6 +269,7 @@ body{
 .record{
 
 	height: 250px;
+	margin-bottom: 50px;
 
 }
 
@@ -289,4 +290,8 @@ body{
 
 }
 
+.ps{
+	font-size: 14px;
+	color: yellow;
+}
 
