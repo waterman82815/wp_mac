@@ -33,11 +33,15 @@
   var q_c=new Array("","(C)Beyond","(C)喜歡你","(C)希慎廣場","(C)不應該","(C)西多士");
   var q_d=new Array("","(D)小甜甜布蘭妮","(D)好心分手","(D)海港城","(D)謝謝","(D)絲襪奶茶");
   
-  var ans=new Array("","(A)五月天","(A)海闊天空","(A)大丸百貨","(A)去吃屎","(A)蛋塔");
+  var ans=new Array("","(C)Beyond","(A)海闊天空","(A)大丸百貨","(D)謝謝","(A)蛋塔");
   var uans=new Array("","");
+
+  var slogan=new Array("K歌之王鐵定不是你！","在唱的用心良苦一點吧！","勁用力唱出你要的幸福吧！","香江要為你閃耀喇！","麥克風被你征服喇！","請問你係陳奕迅嗎？");
 
   var point = 0;
   var i =1;
+
+  var slogan_name;
 
   function printp() {
 
@@ -63,10 +67,40 @@
     document.getElementById("q_b").style.visibility='hidden';
     document.getElementById("q_c").style.visibility='hidden';
     document.getElementById("q_d").style.visibility='hidden';
-    document.getElementById("getPoint").innerHTML = point;
+    //document.getElementById("getPoint").innerHTML = point;
+
+    if(point===0)
+      {
+        document.getElementById("slo").innerHTML = slogan[0];
+        slogan_name=slogan[0];
+      }
+    if(point===20)
+      {
+        document.getElementById("slo").innerHTML = slogan[1];
+        slogan_name=slogan[1];
+      }
+    if(point===40)
+      {
+        document.getElementById("slo").innerHTML = slogan[2];
+        slogan_name=slogan[2];
+      }
+    if(point===60)
+      {
+        document.getElementById("slo").innerHTML = slogan[3];
+        slogan_name=slogan[3];
+      }
+    if(point===80)
+      {
+        document.getElementById("slo").innerHTML = slogan[4];
+        slogan_name=slogan[4];
+      }
+    if(point===100)
+      {
+        document.getElementById("slo").innerHTML = slogan[5];
+        slogan_name=slogan[5];
+      }
+
     document.getElementById("share_b").style.visibility='visibility';
-
-
 
     }
 
@@ -116,7 +150,7 @@
   function share(){
     FB.ui({       display:'iframe',       
                   method: 'feed',
-                  name: '我就是K歌之王',
+                  name: slogan_name,
                   caption:'今天我在K歌擂台玩的很開心', 
                   description: '齊唱學廣東話教你如何唱粵語歌，也提供最詳盡的粵語教學',
                   link: 'http://waterman82815.github.io/wp_mac/final2/index.html',
@@ -146,6 +180,7 @@
       <button class='button 'id="start" onclick="printp()">Start</button>
       <p id="q_title"></p>
       <p id="getPoint"></p>
+      <p id="slo"></p>
   	</div>
       
   		<div class= "question_content"><p class='button' id="q_a" onclick="agame()"></p></div>
