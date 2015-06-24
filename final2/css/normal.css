@@ -164,6 +164,10 @@ body{
 
 }
 
+.bright{
+	color: #FF8888;
+}
+
 .lyric_content a{
 	text-align: left;
 	color: yellow;
