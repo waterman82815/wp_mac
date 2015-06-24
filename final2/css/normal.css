@@ -145,6 +145,7 @@ body{
 	text-align: center;
 	color: #FF7C80;
 	font-size: 35px;
+	margin-bottom: 30px;
 }
 
 .lyric_content{
@@ -164,6 +165,7 @@ body{
 .nav{
   background-color:black;
   margin-bottom: 10px;
+  height: 50px;
 }
 
 .nav ul {
@@ -188,7 +190,7 @@ body{
   text-decoration: none;
   color: #FFC800;
   display: block;
-  /*transition:.3s;*/
+  transition:.3s;
   background-color:black;
 }
 
